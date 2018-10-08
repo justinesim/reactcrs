@@ -7,9 +7,11 @@
     "node": "8.11.2"
   },
   "scripts": {
+    "start":"http-server src",
+    "lint": "eslint . --ext .js",
     "test": "echo \"Error: no test specified\" && exit 0",
     "build": "echo \"BUILD OK\" && exit 0",
-    "prebuild": "npm run test",
+    "prebuild": "npm run lint && npm run version && npm run test",
     "version": "node version-check.js"
   },
   "repository": {
@@ -21,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/justinesim/reactcrs/issues"
   },
-  "homepage": "https://github.com/justinesim/reactcrs#readme"
+  "homepage": "https://github.com/justinesim/reactcrs#readme",
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-plugin-react": "^7.11.1",
+    "http-server": "^0.11.1"
+  }
 }
